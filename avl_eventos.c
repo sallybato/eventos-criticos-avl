@@ -4,7 +4,16 @@
  * Linguagem: C
  */
 
-#include <strings.h>
+/* Comparação de strings ignorando maiúsculas/minúsculas (portável) */
+static int strIgnoreCase(const char *a, const char *b) {
+    while (*a && *b) {
+        char ca = (*a >= 'A' && *a <= 'Z') ? *a + 32 : *a;
+        char cb = (*b >= 'A' && *b <= 'Z') ? *b + 32 : *b;
+        if (ca != cb) return ca - cb;
+        a++; b++;
+    }
+    return (unsigned char)*a - (unsigned char)*b;
+}
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -290,7 +299,7 @@ void relatorioPorRegiao(NoAVL *raiz, const char *regiao, int *encontrou) {
     if (raiz == NULL) return;
     relatorioPorRegiao(raiz->esq, regiao, encontrou);
     if (raiz->status == ATIVO &&
-        strcasecmp(raiz->regiao, regiao) == 0) {
+        strIgnoreCase(raiz->regiao, regiao) == 0) {
         exibirEvento(raiz);
         *encontrou = 1;
     }
