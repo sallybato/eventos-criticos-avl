@@ -1,5 +1,7 @@
 # Sistema de Gerenciamento de Eventos Críticos — Cidade Inteligente
 
+**Aluna:** Rebecca Beccari Fagundes
+
 ## Descrição Geral
 
 Este sistema simula o monitoramento e gerenciamento de eventos críticos urbanos em uma cidade inteligente. Eventos como acidentes de trânsito, falhas em semáforos, interrupções de energia, alagamentos e incêndios são registrados, consultados, priorizados e encerrados por meio de uma interface textual interativa.
@@ -52,7 +54,7 @@ O núcleo do sistema é implementado com uma **Árvore AVL** (Árvore Binária d
 
 ### Requisitos
 - Compilador C com suporte ao padrão **C11** (GCC recomendado)
-- Sistema operacional: Linux, macOS ou Windows (com MinGW/WSL)
+- Sistema operacional: Linux, macOS ou Windows (MinGW, Code::Blocks, VS Code ou qualquer GCC)
 
 ### Compilação (terminal / linha de comando)
 
@@ -118,7 +120,3 @@ MENU PRINCIPAL
 |---|---|
 | `avl_eventos.c` | Código-fonte completo do sistema |
 | `README.md` | Este arquivo |
-
-## Aluna
-
-- Rebecca Beccari Fagundes
